@@ -1,8 +1,8 @@
 // CONSTANTS
-const { database: { port: PORT } } = require('./env.config')
+const { database: { port: PORT } } = require('../env.config')
 
 // CONNECTION
-require('./models')
+require('../models')
 
 // LIBS
 const express =   require('express')

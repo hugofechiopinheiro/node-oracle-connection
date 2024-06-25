@@ -4,7 +4,7 @@
   "description": "Exemplo de integração node em docker com banco oracle de versão antiga",
   "main": "env.config.js",
   "scripts": {
-    "dev": "node main.js",
+    "dev": "node app/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
