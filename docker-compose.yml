@@ -1,0 +1,37 @@
+version: "3.3"
+
+services:
+
+  oracle-svc:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    image: oracle-svc
+    container_name: oracle-svc
+    env_file: docker-compose.env
+    volumes: 
+      - .:/app
+      - modules:/app/node_modules
+    ports:
+      - 9229:9229
+      - 3020:3000
+    networks:
+      - oracle-svc-network
+
+  oracle:
+    image: thebookpeople/oracle-xe-11g
+    container_name: legacy-oracle
+    ports:
+      - "1522:1521"
+    volumes:
+      - oracle-svc-oracle:/opt/oracle/oradata
+    networks:
+      - oracle-svc-network
+
+volumes:
+  modules:
+  oracle-svc-oracle:
+
+networks:
+  oracle-svc-network:
+    external: true

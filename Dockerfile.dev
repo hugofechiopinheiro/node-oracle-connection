@@ -1,0 +1,23 @@
+FROM node:14
+
+# INSTALLING PACKAGES
+RUN apt-get update && \
+    apt-get install -y unzip && \
+    apt-get install libaio1 && \
+    mkdir /app
+
+WORKDIR /app
+
+# UNZIP oracle 11g version
+COPY instantclient-basic-linux.x64-11.2.0.4.0.zip /tmp/
+RUN unzip /tmp/instantclient-basic-linux.x64-11.2.0.4.0.zip -d /opt && \
+    rm /tmp/instantclient-basic-linux.x64-11.2.0.4.0.zip
+
+# POINTING PATH (ESSENTIAL)
+ENV LD_LIBRARY_PATH=/opt/instantclient_11_2
+
+COPY . .
+
+# RUN npm i libaio --global
+
+CMD npm i && npm run dev

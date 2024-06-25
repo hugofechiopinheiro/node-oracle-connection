@@ -1,0 +1,26 @@
+{
+  "name": "oracle-connection",
+  "version": "1.0.0",
+  "description": "Exemplo de integração node em docker com banco oracle de versão antiga",
+  "main": "env.config.js",
+  "scripts": {
+    "dev": "node main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "libaio": "^1.0.3",
+    "oracledb": "^5.4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hugofechiopinheiro/node-oracle-connection.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hugofechiopinheiro/node-oracle-connection/issues"
+  },
+  "homepage": "https://github.com/hugofechiopinheiro/node-oracle-connection#readme"
+}
